@@ -1,0 +1,5 @@
+// pushes and subtracts constant a from constant b
+
+push constant 17
+push constant 12
+sub

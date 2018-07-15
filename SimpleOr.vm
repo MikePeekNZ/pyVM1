@@ -1,0 +1,5 @@
+// Pushes two constants then ors them together.
+
+push constant 7
+push constant 12
+or

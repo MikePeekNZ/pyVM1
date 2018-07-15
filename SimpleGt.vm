@@ -1,0 +1,5 @@
+// Pushes two constants and checks if constant a is greater than constant b.
+
+push constant 8
+push constant 7
+gt

@@ -1,0 +1,4 @@
+// pushes and negates constant n
+
+push constant 17
+not
