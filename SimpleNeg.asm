@@ -1,5 +1,5 @@
 // push  17
-@17    // D = constant  17
+@17    // D = constant 17
 D=A
 @SP    // *SP = D
 A=M
@@ -10,8 +10,9 @@ M=M+1
 @SP    // store top of stack in D
 M=M-1  // move pointer to top value on stack
 A=M
+M=-M
 D=M
-D=-D   // negate D
+// push local 0
 @SP    // store D in top of stack
 A=M
 M=D

@@ -68,7 +68,12 @@ def arg1():
         return current_command
     elif command_type() == 'C_PUSH':
         # parse line for first argument
-        push_arguments = current_command[5:len(current_command) - 2]
+        push_arguments = ''
+        for i in current_command[5:]:
+            if i.isalpha():
+                push_arguments = push_arguments + i
+
+            # push_arguments = current_command[5:len(current_command) - 2]
 
         return push_arguments
     else:
@@ -79,12 +84,10 @@ def arg2():
 
     if command_type() == 'C_PUSH':
         argument_2 = ''
-
         # get value at end of current_command
         for i in current_command:
             if i.isnumeric():
                 argument_2 = argument_2 + i
-
         # argument_2 = current_command[len(current_command)-1:len(current_command)]
         # cast to int and return
         return int(argument_2)

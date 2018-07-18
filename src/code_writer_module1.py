@@ -67,18 +67,12 @@ def write_arithmetic(command):
         output_file_data.write('A=A+1\n')
         output_file_data.write('M=D+M\n')
 
-        # push local 1
-        # # store result of above addition in D
+        # # store result of previous calculation in D
         output_file_data.write('D=M\n')
 
-        # # store D in top of stack
-        output_file_data.write('@SP    // store D in top of stack\n')
-        output_file_data.write('A=M\n')
-        output_file_data.write('M=D\n')
-
-        # # increment stack pointer
-        output_file_data.write('@SP    // *SP++\n')
-        output_file_data.write('M=M+1\n')
+        # push local 1
+        output_file_data.write('// push local 1\n')
+        write_push_pop('C_PUSH', 'local', 1)
     elif command == 'sub':
         output_file_data.write('// sub\n')
 
@@ -120,18 +114,12 @@ def write_arithmetic(command):
         output_file_data.write('A=A+1\n')
         output_file_data.write('M=M-D\n')
 
-        # push local 1
-        # # store result of above addition in D
+        # # store result of previous calculation in D
         output_file_data.write('D=M\n')
 
-        # # store D in top of stack
-        output_file_data.write('@SP    // store D in top of stack\n')
-        output_file_data.write('A=M\n')
-        output_file_data.write('M=D\n')
-
-        # # increment stack pointer
-        output_file_data.write('@SP    // *SP++\n')
-        output_file_data.write('M=M+1\n')
+        # push local 1
+        output_file_data.write('// push local 1\n')
+        write_push_pop('C_PUSH', 'local', 1)
     elif command == 'neg':
         output_file_data.write('// neg\n')
         # pop local 0
@@ -139,18 +127,16 @@ def write_arithmetic(command):
         output_file_data.write('@SP    // store top of stack in D\n')
         output_file_data.write('M=M-1  // move pointer to top value on stack\n')
         output_file_data.write('A=M\n')
-        output_file_data.write('D=M\n')
         # neg
-        output_file_data.write('D=-D   // negate D\n')
-        # push local 0
-        # # store D in top of stack
-        output_file_data.write('@SP    // store D in top of stack\n')
-        output_file_data.write('A=M\n')
-        output_file_data.write('M=D\n')
+        output_file_data.write('M=-M\n')
+        # neg
 
-        # # increment stack pointer
-        output_file_data.write('@SP    // *SP++\n')
-        output_file_data.write('M=M+1\n')
+        # # store result of previous calculation in D
+        output_file_data.write('D=M\n')
+
+        # push local 0
+        output_file_data.write('// push local 0\n')
+        write_push_pop('C_PUSH', 'local', 0)
     elif command == 'eq':
         output_file_data.write('// eq\n')
         # pop local 0
@@ -212,16 +198,10 @@ def write_arithmetic(command):
         output_file_data.write('0;JMP\n')
 
         # push local 0
+        output_file_data.write('// push local 0\n')
+
         output_file_data.write('(PUSH)\n')
-
-        # # store D in top of stack
-        output_file_data.write('@SP    // store D in top of stack\n')
-        output_file_data.write('A=M\n')
-        output_file_data.write('M=D\n')
-
-        # # increment stack pointer
-        output_file_data.write('@SP    // *SP++\n')
-        output_file_data.write('M=M+1\n')
+        write_push_pop('C_PUSH', 'local', 0)
     elif command == 'gt':
         output_file_data.write('// gt\n')
         # pop local 0
@@ -284,16 +264,10 @@ def write_arithmetic(command):
         output_file_data.write('0;JMP\n')
 
         # push local 0
+        output_file_data.write('// push local 0\n')
+
         output_file_data.write('(PUSH)\n')
-
-        # # store D in top of stack
-        output_file_data.write('@SP    // store D in top of stack\n')
-        output_file_data.write('A=M\n')
-        output_file_data.write('M=D\n')
-
-        # # increment stack pointer
-        output_file_data.write('@SP    // *SP++\n')
-        output_file_data.write('M=M+1\n')
+        write_push_pop('C_PUSH', 'local', 0)
     elif command == 'lt':
         output_file_data.write('// lt\n')
         # pop local 0
@@ -356,16 +330,10 @@ def write_arithmetic(command):
         output_file_data.write('0;JMP\n')
 
         # push local 0
+        output_file_data.write('// push local 0\n')
+
         output_file_data.write('(PUSH)\n')
-
-        # # store D in top of stack
-        output_file_data.write('@SP    // store D in top of stack\n')
-        output_file_data.write('A=M\n')
-        output_file_data.write('M=D\n')
-
-        # # increment stack pointer
-        output_file_data.write('@SP    // *SP++\n')
-        output_file_data.write('M=M+1\n')
+        write_push_pop('C_PUSH', 'local', 0)
     elif command == 'and':
         output_file_data.write('// and\n')
 
@@ -411,14 +379,11 @@ def write_arithmetic(command):
         # # store result of above addition in D
         output_file_data.write('D=M\n')
 
-        # # store D in top of stack
-        output_file_data.write('@SP    // store D in top of stack\n')
-        output_file_data.write('A=M\n')
-        output_file_data.write('M=D\n')
+        # push local 0
+        output_file_data.write('// push local 0\n')
 
-        # # increment stack pointer
-        output_file_data.write('@SP    // *SP++\n')
-        output_file_data.write('M=M+1\n')
+        output_file_data.write('(PUSH)\n')
+        write_push_pop('C_PUSH', 'local', 0)
     elif command == 'or':
         output_file_data.write('// or\n')
 
@@ -464,14 +429,11 @@ def write_arithmetic(command):
         # # store result of above addition in D
         output_file_data.write('D=M\n')
 
-        # # store D in top of stack
-        output_file_data.write('@SP    // store D in top of stack\n')
-        output_file_data.write('A=M\n')
-        output_file_data.write('M=D\n')
+        # push local 0
+        output_file_data.write('// push local 0\n')
 
-        # # increment stack pointer
-        output_file_data.write('@SP    // *SP++\n')
-        output_file_data.write('M=M+1\n')
+        output_file_data.write('(PUSH)\n')
+        write_push_pop('C_PUSH', 'local', 0)
     elif command == 'not':
         output_file_data.write('// not\n')
         # pop local 0
@@ -483,43 +445,48 @@ def write_arithmetic(command):
         # neg
         output_file_data.write('D=!D   // D gets not D\n')
         # push local 0
-        # # store D in top of stack
-        output_file_data.write('@SP    // store D in top of stack\n')
-        output_file_data.write('A=M\n')
-        output_file_data.write('M=D\n')
+        output_file_data.write('// push local 0\n')
 
-        # # increment stack pointer
-        output_file_data.write('@SP    // *SP++\n')
-        output_file_data.write('M=M+1\n')
+        output_file_data.write('(PUSH)\n')
+        write_push_pop('C_PUSH', 'local', 0)
     else:
         output_file_data.write('Error: cannot write command\n')
 
 
 def write_push_pop(command, segment, index):
 
-    # writes the assembly code
-    # that is the translation of
-    # the given command
+    # writes the assembly code that is the translation of the given command
     global output_file_data
-
     if command == 'C_PUSH':
-        # print command and segment to silence error message
-        output_file_data.write('// push ' + ' {}'.format(index) + '\n')
+        if segment == 'constant':
+            # print command and segment to silence error message
+            output_file_data.write('// push ' + ' {}'.format(index) + '\n')
 
-        # store index in D
-        output_file_data.write('@{}    // D = {} {}'.format(index, segment, index) + '\n')
-        output_file_data.write('D=A' + '\n')
+            # store index in D
+            output_file_data.write('@{}    // D = {} {}'.format(index, segment, index) + '\n')
+            output_file_data.write('D=A' + '\n')
 
-        # store D in *SP
-        output_file_data.write('@SP    // *SP = D\n')
-        output_file_data.write('A=M\n')
-        output_file_data.write('M=D\n')
+            # store D in *SP
+            output_file_data.write('@SP    // *SP = D\n')
+            output_file_data.write('A=M\n')
+            output_file_data.write('M=D\n')
 
-        # increment SP
-        output_file_data.write('@SP    // SP++\n')
-        output_file_data.write('M=M+1\n')
+            # increment SP
+            output_file_data.write('@SP    // SP++\n')
+            output_file_data.write('M=M+1\n')
+        elif segment == 'local':
+            # push local index
+            # # store result of previous calculation in D
+            # output_file_data.write('D=M\n')
 
-    # output_file.write('0' + a_instruction + '\n')
+            # # store D in top of stack
+            output_file_data.write('@SP    // store D in top of stack\n')
+            output_file_data.write('A=M\n')
+            output_file_data.write('M=D\n')
+
+            # # increment stack pointer
+            output_file_data.write('@SP    // *SP++\n')
+            output_file_data.write('M=M+1\n')
 
 
 def close_file():

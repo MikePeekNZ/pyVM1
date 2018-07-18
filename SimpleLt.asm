@@ -1,3 +1,11 @@
+// push  12
+@12    // D = constant 12
+D=A
+@SP    // *SP = D
+A=M
+M=D
+@SP    // SP++
+M=M+1
 // push  7
 @7    // D = constant 7
 D=A
@@ -6,15 +14,7 @@ A=M
 M=D
 @SP    // SP++
 M=M+1
-// push  12
-@12    // D = constant  12
-D=A
-@SP    // *SP = D
-A=M
-M=D
-@SP    // SP++
-M=M+1
-// eq
+// lt
 @SP    // store top of stack in D
 M=M-1  // move pointer to top value on stack
 A=M
@@ -49,6 +49,7 @@ D=-1
 D=0
 @PUSH
 0;JMP
+// push local 0
 (PUSH)
 @SP    // store D in top of stack
 A=M

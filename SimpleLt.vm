@@ -1,5 +1,5 @@
 // Pushes two constants and checks if constant a is less than constant b.
 
-push constant 7
 push constant 12
+push constant 7
 lt

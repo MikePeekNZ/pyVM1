@@ -48,6 +48,7 @@ D=-1
 D=0
 @PUSH
 0;JMP
+// push local 0
 (PUSH)
 @SP    // store D in top of stack
 A=M

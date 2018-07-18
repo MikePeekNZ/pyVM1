@@ -1,5 +1,5 @@
 // push  17
-@17    // D = constant  17
+@17    // D = constant 17
 D=A
 @SP    // *SP = D
 A=M
@@ -7,7 +7,7 @@ M=D
 @SP    // SP++
 M=M+1
 // push  12
-@12    // D = constant  12
+@12    // D = constant 12
 D=A
 @SP    // *SP = D
 A=M
@@ -37,6 +37,7 @@ D=M
 A=A+1
 M=M-D
 D=M
+// push local 1
 @SP    // store D in top of stack
 A=M
 M=D
