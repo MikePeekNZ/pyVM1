@@ -19,20 +19,16 @@ M=M+1
 M=M-1  // move pointer to top value on stack
 A=M
 D=M
-@LCL    // store D in local 0
-A=M
+@16    // store D in local 0
 M=D
-@SP    // *SP--
-M=M-1
 @SP    // store top of stack in D
+M=M-1  // move pointer to top value on stack
 A=M
 D=M
-@LCL   // store D in local 1
-A=M
+@16   // store D in local 1
 A=A+1
 M=D
-@LCL    // store local 0 in D
-A=M
+@16    // store local 0 in D
 D=M
 A=A+1
 M=D+M
