@@ -1,0 +1,19 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/07/StackArithmetic/StackTest/StackTest.vm
+
+// Executes a sequence of arithmetic and logical operations
+// on the stack. 
+push local 0
+push local 1
+push constant 18
+push constant 19
+push argument 2
+push argument 3
+push this 4
+push this 5
+push that 6
+push that 7
+push temp 6
+push temp 7

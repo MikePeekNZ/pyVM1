@@ -346,10 +346,52 @@ def write_push_pop(command, segment, index):
             # increment SP
             output_file_data.write('@SP    // SP++\n')
             output_file_data.write('M=M+1\n')
-        elif segment == 'local':
-            # push local index
-            # # store result of previous calculation in D
-            # output_file_data.write('D=M\n')
+        elif segment == 'pointer':
+            output_file_data.write('@3     // store pointer {} in D\n'.format(index))
+            output_file_data.write('D=A\n')
+            output_file_data.write('@{}\n'.format(index))
+            output_file_data.write('A=D+A\n')
+            output_file_data.write('D=M\n')
+
+            # # store D in top of stack
+            output_file_data.write('@SP    // store D in top of stack\n')
+            output_file_data.write('A=M\n')
+            output_file_data.write('M=D\n')
+
+            # # increment stack pointer
+            output_file_data.write('@SP    // *SP++\n')
+            output_file_data.write('M=M+1\n')
+        elif segment == 'temp':
+            output_file_data.write('@5     // store temp {} in D\n'.format(index))
+            output_file_data.write('D=A\n')
+            output_file_data.write('@{}\n'.format(index))
+            output_file_data.write('A=D+A\n')
+            output_file_data.write('D=M\n')
+
+            # # store D in top of stack
+            output_file_data.write('@SP    // store D in top of stack\n')
+            output_file_data.write('A=M\n')
+            output_file_data.write('M=D\n')
+
+            # # increment stack pointer
+            output_file_data.write('@SP    // *SP++\n')
+            output_file_data.write('M=M+1\n')
+        else:
+            if segment == 'local':
+                # push local i
+                output_file_data.write('@LCL   // store local {} in D\n'.format(index))
+            elif segment == 'argument':
+                # push argument i
+                output_file_data.write('@ARG   // store argument {} in D\n'.format(index))
+            elif segment == 'this':
+                output_file_data.write('@THIS  // store this {} in D\n'.format(index))
+            elif segment == 'that':
+                output_file_data.write('@THAT  // store that {} in D\n'.format(index))
+
+            output_file_data.write('D=M\n')
+            output_file_data.write('@{}\n'.format(index))
+            output_file_data.write('A=D+A\n')
+            output_file_data.write('D=M\n')
 
             # # store D in top of stack
             output_file_data.write('@SP    // store D in top of stack\n')
