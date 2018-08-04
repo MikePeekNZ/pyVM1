@@ -2,39 +2,32 @@
 
 import sys
 import os
-from src import parser_module1
-from src import code_writer_module1
+import parser_module1
+import code_writer_module1
 
 
 def main():
 
-    # check if reading folder or single file
-    argument_vector_1 = sys.argv[1]
-    len_argv1 = len(argument_vector_1)
-    files_to_copy = []
+    # check whether individual file or folder is passed to VMTranslator
+    if sys.argv[1][len(sys.argv[1]) - 3] == '.' \
+            and sys.argv[1][len(sys.argv[1]) - 2] == 'v' \
+            and sys.argv[1][len(sys.argv[1]) - 1] == 'm':
 
-    if argument_vector_1[len_argv1 - 3] == '.' \
-            and argument_vector_1[len_argv1 - 2] == 'v' \
-            and argument_vector_1[len_argv1 - 1] == 'm':
-
+        # open input file
         parser_module1.constructor(sys.argv[1])
-    else:
-        folder_path = os.listdir('C:/Program_Files/mingw-w64/pyVM1/testFiles')
-        for i in folder_path:
-            files_to_copy.append(i)
 
-        for i in range(0, len(files_to_copy)):
-
-            # copy contents of infile
-            parser_module1.constructor(files_to_copy[i])
-
-    # open outfile
-    if sys.argv[1][len(sys.argv[1]) - 3] == '.':
+        # open output file
         code_writer_module1.set_file_name(sys.argv[1])
     else:
-        file_name = sys.argv[1]
-        file_name = file_name + '.vm'
-        code_writer_module1.set_file_name(file_name)
+        # extract list of files to copy
+        file_list = os.listdir(sys.argv[1])
+
+        # pass files to constructor
+        for i in range(0, len(file_list)):
+            parser_module1.constructor(file_list[i])
+
+        # set output file
+        code_writer_module1.set_file_name(sys.argv[1])
 
     # loop through contents of input file data
     while parser_module1.has_more_commands():
@@ -54,9 +47,11 @@ def main():
             code_writer_module1.write_push_pop(main_command_type, argument_1,
                                                argument_2)
 
+        # process arithmetic command
         if main_command_type == 'C_ARITHMETIC':
             code_writer_module1.write_arithmetic(argument_1)
 
+    # close file
     code_writer_module1.close_file()
 
 

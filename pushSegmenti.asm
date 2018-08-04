@@ -104,10 +104,7 @@ A=M
 M=D
 @SP    // *SP++
 M=M+1
-@5     // store temp 7 in D
-D=A
-@7
-A=D+A
+@pushSegmenti.8
 D=M
 @SP    // store D in top of stack
 A=M

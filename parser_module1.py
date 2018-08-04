@@ -1,6 +1,5 @@
 # parser module for VM translator stage 1: stack arithmetic commands
 
-import os
 # initialise variables
 read_data = []
 command_counter = 0
@@ -8,14 +7,15 @@ current_command = []
 
 
 def constructor(infile):
+
+    # hold contents of .vm files
     global read_data
 
-    file_to_write = os.path.basename(infile)
-
-    with open(file_to_write) as input_file:
+    with open(infile) as input_file:
         for line in input_file:
             write_line = False
 
+            # ignore comments and empty lines
             for index, char in enumerate(line):
                 if char in ('/', ' '):
                     break

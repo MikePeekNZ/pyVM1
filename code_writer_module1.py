@@ -1,4 +1,7 @@
 # codewriter module for VM translator stage 1: stack arithmetic commands
+
+import os
+
 output_file_data = {}
 input_file_name = ''
 output_file_name = ''
@@ -13,24 +16,40 @@ push_counter = 0
 
 def set_file_name(filename):
     global output_file_data
-    # global output_file_name
-    # global input_file_name
+    global input_file_name
 
-    # # copy name of input file
-    # for char in filename:
-    #     output_file_name = output_file_name + char
-    #
-    # # remove file type ending
-    # output_file_name = output_file_name[0:len(output_file_name) - 2]
-    #
-    # # set input file name
-    # input_file_name = output_file_name
-    #
-    # # add asm as file type
-    # output_file_name = output_file_name + 'asm'
+    # flag to show whether processing single file or batch of files
+    is_batch_file = True
+
+    # check if processing a batch of files
+    if filename[len(filename) - 3] == '.':
+        is_batch_file = False
+
+    norm_filename = ''
+
+    # remove .vm extension
+    filename_split = os.path.splitext(filename)
+
+    filename_no_extension = filename_split[0]
+
+    # step through char by char switching \ for /
+    for i in range(0, len(filename_no_extension)):
+        if filename_no_extension[i] == '\\':
+            norm_filename = norm_filename + '/'
+        else:
+            norm_filename = norm_filename + filename[i]
+
+    # add new extension
+    if is_batch_file:
+        norm_filename = norm_filename + '/batchFilesOut.asm'
+    else:
+        norm_filename = norm_filename + '.asm'
 
     # Opens the output file/stream and gets ready to write into it
-    output_file_data = open(filename, 'w', encoding='utf-8')
+    output_file_data = open(norm_filename, 'w', encoding='utf-8')
+
+    # copy current filename for static segment
+    input_file_name = os.path.basename(filename_no_extension) + '.'
 
 
 def write_arithmetic(command):

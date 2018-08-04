@@ -1,43 +1,58 @@
-// push  7
-@7    // D = constant 7
+@7
 D=A
-@SP    // *SP = D
+@SP
 A=M
 M=D
-@SP    // SP++
+@SP
 M=M+1
-// push  8
-@8    // D = constant 8
+@8
 D=A
-@SP    // *SP = D
+@SP
 A=M
 M=D
-@SP    // SP++
+@SP
 M=M+1
-// add
-@SP    // store top of stack in D
-M=M-1  // move pointer to top value on stack
-A=M
-D=M
-@16    // store D in local 0
+@5
+D=A
+@0
+D=D+A
+@13
 M=D
-@SP    // store top of stack in D
-M=M-1  // move pointer to top value on stack
+@SP
+M=M-1
 A=M
 D=M
-@16   // store D in local 1
+@13
+A=M
+M=D
+@5
+D=A
+@1
+D=D+A
+@13
+M=D
+@SP
+M=M-1
+A=M
+D=M
+@13
+A=M
+M=D
+@5
+D=M
 A=A+1
+D=D+M
+@5
 M=D
-@16    // store local 0 in D
+@5
+D=A
+@0
+A=D+A
 D=M
-A=A+1
-M=D+M
-D=M
-// push local 1
-@SP    // store D in top of stack
+@SP
 A=M
 M=D
-@SP    // *SP++
+@SP
 M=M+1
 (END)
 @END
