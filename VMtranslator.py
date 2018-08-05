@@ -46,10 +46,31 @@ def main():
             argument_2 = parser_module1.arg2()
             code_writer_module1.write_push_pop(main_command_type, argument_1,
                                                argument_2)
-
         # process arithmetic command
-        if main_command_type == 'C_ARITHMETIC':
+        elif main_command_type == 'C_ARITHMETIC':
             code_writer_module1.write_arithmetic(argument_1)
+        # process label command
+        elif main_command_type == 'C_LABEL':
+            # get file name minus extension
+            if sys.argv[1][len(sys.argv[1]) - 3] == '.':
+                label_file_name = sys.argv[1][0:len(sys.argv[1]) - 3]
+            else:
+                label_file_name = sys.argv[1]
+            code_writer_module1.write_label(argument_1, label_file_name)
+        elif main_command_type == 'C_GOTO':
+            # get file name minus extension
+            if sys.argv[1][len(sys.argv[1]) - 3] == '.':
+                label_file_name = sys.argv[1][0:len(sys.argv[1]) - 3]
+            else:
+                label_file_name = sys.argv[1]
+            code_writer_module1.write_goto(argument_1, label_file_name)
+        elif main_command_type == 'C_IF':
+            # get file name minus extension
+            if sys.argv[1][len(sys.argv[1]) - 3] == '.':
+                label_file_name = sys.argv[1][0:len(sys.argv[1]) - 3]
+            else:
+                label_file_name = sys.argv[1]
+            code_writer_module1.write_if(argument_1, label_file_name)
 
     # close file
     code_writer_module1.close_file()

@@ -489,6 +489,39 @@ def write_push_pop(command, segment, index):
             output_file_data.write('M=D\n')
 
 
+def write_label(command, vm_file_name):
+    global output_file_data
+
+    output_file_data.write('({}.{})\n'.format(vm_file_name, command))
+
+
+def write_goto(command, vm_file_name):
+    global output_file_data
+
+    # at Xxx.j
+    output_file_data.write('@{}.{}\n'.format(vm_file_name, command))
+
+    # unconditional jump
+    output_file_data.write('0;JMP\n')
+
+
+def write_if(command, vm_file_name):
+    global output_file_data
+
+    # pop truth value to temp 0
+    write_push_pop('C_POP', 'temp', 0)
+
+    # store temp in D
+    output_file_data.write('@5\n')
+    output_file_data.write('D=M\n')
+
+    # at Xxx.j
+    output_file_data.write('@{}.{}\n'.format(vm_file_name, command))
+
+    # conditional jump
+    output_file_data.write('D;JNE\n')
+
+
 def close_file():
     global output_file_data
 

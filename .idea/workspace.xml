@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7442f837-18ee-4405-a7ae-0fab202b3cb7" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/VMtranslator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SimpleAdd.asm" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleAdd.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StackTest.asm" beforeDir="false" afterPath="$PROJECT_DIR$/StackTest.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_prac.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_prac.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pushSegmenti.asm" beforeDir="false" afterPath="$PROJECT_DIR$/pushSegmenti.asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pushSegmenti.vm" beforeDir="false" afterPath="$PROJECT_DIR$/pushSegmenti.vm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/code_writer_module1.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/code_writer_module1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser_module1.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser_module1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BasicTest.vm.vm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VMtranslator.py" beforeDir="false" afterPath="$PROJECT_DIR$/VMtranslator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code_writer_module1.py" beforeDir="false" afterPath="$PROJECT_DIR$/code_writer_module1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parser_module1.py" beforeDir="false" afterPath="$PROJECT_DIR$/parser_module1.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,11 +18,11 @@
     <session id="-1337908336">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="17" />
+          <entry key="project.closed" value="19" />
           <entry key="project.open.time.2" value="1" />
-          <entry key="project.open.time.3" value="14" />
+          <entry key="project.open.time.3" value="16" />
           <entry key="project.open.time.4" value="2" />
-          <entry key="project.opened" value="17" />
+          <entry key="project.opened" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -42,12 +37,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="5536" />
+          <entry key="Python" value="7712" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="5536" />
+          <entry key="Python Console" value="49" />
+          <entry key="py" value="7663" />
         </counts>
       </usages-collector>
     </session>
@@ -55,22 +51,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main_prac.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-17">
-              <caret line="32" column="54" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
-              <folding>
-                <element signature="e#68#78#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/VMTranslator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="53" column="16" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
+            <state relative-caret-position="1173">
+              <caret line="72" column="68" selection-start-line="72" selection-start-column="68" selection-end-line="72" selection-end-column="68" />
               <folding>
                 <element signature="e#68#78#0" expanded="true" />
               </folding>
@@ -81,26 +65,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/parser_module1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="68" selection-start-column="68" selection-end-column="68" />
+            <state relative-caret-position="370">
+              <caret line="31" column="29" lean-forward="true" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/code_writer_module1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="51" column="67" selection-start-line="51" selection-start-column="67" selection-end-line="51" selection-end-column="67" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/VMTranslator1.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="30" column="10" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
+            <state relative-caret-position="200">
+              <caret line="514" column="30" selection-start-line="514" selection-start-column="30" selection-end-line="514" selection-end-column="30" />
+              <folding>
+                <marker date="1533380024439" expanded="true" signature="15588:15932" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -136,10 +114,10 @@
         <option value="$PROJECT_DIR$/../pyAsm/Assembler.py" />
         <option value="$PROJECT_DIR$/VMTranslator1.py" />
         <option value="$PROJECT_DIR$/src/main_prac.py" />
-        <option value="$PROJECT_DIR$/main_prac.py" />
         <option value="$PROJECT_DIR$/VMtranslator.py" />
         <option value="$PROJECT_DIR$/src/code_writer_module1.py" />
         <option value="$PROJECT_DIR$/src/parser_module1.py" />
+        <option value="$PROJECT_DIR$/main_prac.py" />
         <option value="$PROJECT_DIR$/VMTranslator.py" />
         <option value="$PROJECT_DIR$/parser_module1.py" />
         <option value="$PROJECT_DIR$/code_writer_module1.py" />
@@ -147,10 +125,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="909" />
-    <option name="y" value="20" />
-    <option name="width" value="1000" />
-    <option name="height" value="774" />
+    <option name="x" value="638" />
+    <option name="y" value="80" />
+    <option name="width" value="1216" />
+    <option name="height" value="899" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -158,6 +136,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -174,7 +153,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -211,9 +189,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="909" y="20" width="1000" height="774" extended-state="0" />
+    <frame x="638" y="80" width="1216" height="899" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24844074" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20288625" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -223,8 +201,8 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Python Console" order="8" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.275817" />
+      <window_info anchor="bottom" id="Python Console" order="8" weight="0.3296875" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -268,6 +246,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main_prac.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="57" column="60" lean-forward="true" selection-start-line="57" selection-start-column="60" selection-end-line="57" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VMTranslator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1173">
+          <caret line="72" column="68" selection-start-line="72" selection-start-column="68" selection-end-line="72" selection-end-column="68" />
+          <folding>
+            <element signature="e#68#78#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/VMTranslator1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
@@ -275,36 +270,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main_prac.py">
+    <entry file="file://$PROJECT_DIR$/parser_module1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="32" column="54" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
-          <folding>
-            <element signature="e#68#78#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="370">
+          <caret line="31" column="29" lean-forward="true" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/code_writer_module1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="51" column="67" selection-start-line="51" selection-start-column="67" selection-end-line="51" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/parser_module1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="68" selection-start-column="68" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/VMTranslator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="53" column="16" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
+        <state relative-caret-position="200">
+          <caret line="514" column="30" selection-start-line="514" selection-start-column="30" selection-end-line="514" selection-end-column="30" />
           <folding>
-            <element signature="e#68#78#0" expanded="true" />
+            <marker date="1533380024439" expanded="true" signature="15588:15932" ph="..." />
           </folding>
         </state>
       </provider>
